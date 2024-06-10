@@ -36,3 +36,17 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def xlsx_to_csv(xlsx_file, csv_file):
+    # Ler o arquivo XLSX
+    df = pd.read_excel(xlsx_file, header=None)
+    
+    # Salvar como arquivo CSV
+    df.to_csv(csv_file, index=False, header=False)
+
+# Caminho dos arquivos
+xlsx_file = '/var/output/tabela.xlsx'
+csv_file = '/var/output/tabela.csv'
+
+# Converter XLSX para CSV
+xlsx_to_csv(xlsx_file, csv_file)
